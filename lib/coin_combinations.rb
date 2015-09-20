@@ -6,6 +6,7 @@ class Fixnum
     until total_cents == 0
       if (total_cents > 10)
         change[1] = (total_cents / 10)
+        total_cents = (total_cents % 10)
       elsif (total_cents > 5)
         change[2] = (total_cents / 5)
         total_cents = (total_cents % 5)
