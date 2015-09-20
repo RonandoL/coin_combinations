@@ -8,8 +8,6 @@ get('/') do
 end
 
 get('/results') do  # user goes to this URL
-  @word = params.fetch('word')
-  @word_b = @word.reverse
-  @word_p = @word.palindromes  # data from form fields
+  @cents = params.fetch('total_cents').to_i.coin_combinations
   erb(:results_file)  # this is the filename
 end

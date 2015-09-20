@@ -1,23 +1,26 @@
 class Fixnum
   define_method(:coin_combinations) do
     total_cents = self
-    change = [0, 0, 0, 0]
+    quarters = 0
+    dimes = 0
+    nickles = 0
+    pennies = 0
 
     until total_cents == 0
       if (total_cents > 25)
-        change[0] = (total_cents / 25)
+        quarters = (total_cents / 25)
         total_cents = (total_cents % 25)
       elsif (total_cents > 10)
-        change[1] = (total_cents / 10)
+        dimes = (total_cents / 10)
         total_cents = (total_cents % 10)
       elsif (total_cents > 5)
-        change[2] = (total_cents / 5)
+        nickles = (total_cents / 5)
         total_cents = (total_cents % 5)
       else
-        change[3] = total_cents
+        pennies = total_cents
         total_cents = 0
       end
     end
-    return change
+    return [quarters, dimes, nickles, pennies]
   end
 end
