@@ -4,7 +4,10 @@ class Fixnum
     change = [0, 0, 0, 0]
 
     until total_cents == 0
-      if (total_cents > 10)
+      if (total_cents > 25)
+        change[0] = (total_cents / 25)
+        total_cents = (total_cents % 25)
+      elsif (total_cents > 10)
         change[1] = (total_cents / 10)
         total_cents = (total_cents % 10)
       elsif (total_cents > 5)

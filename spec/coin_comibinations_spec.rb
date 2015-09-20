@@ -13,4 +13,8 @@ describe('Fixnum#coin_combinations') do
   it("will give the correct number of dimes, nickles and pennies") do
     expect(18.coin_combinations()).to(eq([0, 1, 1, 3]))
   end
+
+  it("will give correct number of quarters, dimes, nickles and pennies") do
+    expect(69.coin_combinations()).to(eq([2, 1, 1, 4]))
+  end
 end
