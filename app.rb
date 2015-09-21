@@ -8,6 +8,7 @@ get('/') do
 end
 
 get('/results') do  # user goes to this URL
+  @change = params.fetch('total_cents')
   @cents = params.fetch('total_cents').to_i.coin_combinations
   erb(:results_file)  # this is the filename
 end
